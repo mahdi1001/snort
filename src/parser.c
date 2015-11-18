@@ -3021,6 +3021,7 @@ OptTreeNode * ParseRuleOptions(SnortConfig *sc, RuleTreeNode *rtn,
 
                     if ( !dopt_keyword && rule_options[j].detection )
                         dopt_keyword = SnortStrdup(opts[0]);
+                    mSplitFree(&opts, num_opts); 
                     break;
                 }
             }
@@ -3057,7 +3058,7 @@ OptTreeNode * ParseRuleOptions(SnortConfig *sc, RuleTreeNode *rtn,
                         {
                             dopt_keyword = SnortStrdup(opts[0]);
                         }
-
+			mSplitFree(&opts, num_opts); 
                         break;
                     }
                 }
